@@ -3,192 +3,268 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Cristiano Nilsen — Cloud &amp; DevOps Engineer</title>
+<title>Cristiano Nilsen — git log</title>
 <meta name="description" content="Senior Cloud & DevOps Engineer. AWS, Kubernetes, Terraform, SRE and Platform Engineering." />
 <meta property="og:title" content="Cristiano Nilsen — Cloud & DevOps Engineer" />
 <meta property="og:description" content="Senior Cloud & DevOps Engineer. AWS, Kubernetes, Terraform, SRE and Platform Engineering." />
 <meta property="og:type" content="website" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☁️</text></svg>" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>" />
 <style>
-  :root {
-    --bg: #0b0f17;
-    --panel: #121826;
-    --border: #1f2937;
-    --text: #e5e7eb;
-    --muted: #94a3b8;
-    --accent: #38bdf8;
-    --accent2: #a78bfa;
+  :root{
+    --canvas:#0d1117;
+    --subtle:#161b22;
+    --inset:#010409;
+    --border:#30363d;
+    --border-muted:#21262d;
+    --fg:#e6edf3;
+    --fg-muted:#8b949e;
+    --fg-dim:#6e7681;
+    --blue:#58a6ff;
+    --green:#3fb950;
+    --red:#f85149;
+    --purple:#bc8cff;
+    --yellow:#d29922;
+    --orange:#db6d28;
+    --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
   }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: ui-sans-serif, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--canvas);
+    color:var(--fg);
+    font-family:var(--mono);
+    font-size:14px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
   }
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background:
-      radial-gradient(600px circle at 15% -5%, rgba(56,189,248,.16), transparent 60%),
-      radial-gradient(600px circle at 85% 0%, rgba(167,139,250,.14), transparent 60%);
-    pointer-events: none;
-    z-index: 0;
+  body::after{
+    content:"";
+    position:fixed;inset:0;pointer-events:none;z-index:0;
+    background-image:linear-gradient(rgba(88,166,255,.035) 1px,transparent 1px),
+                     linear-gradient(90deg,rgba(88,166,255,.035) 1px,transparent 1px);
+    background-size:32px 32px;
   }
-  main { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 72px 24px 64px; }
-  .badge {
-    display: inline-block;
-    font-size: .78rem;
-    letter-spacing: .06em;
-    text-transform: uppercase;
-    color: var(--accent);
-    border: 1px solid rgba(56,189,248,.35);
-    background: rgba(56,189,248,.08);
-    padding: 5px 12px;
-    border-radius: 999px;
+  main{position:relative;z-index:1;max-width:920px;margin:0 auto;padding:40px 20px 64px}
+
+  .prompt{color:var(--green)}
+  .path{color:var(--blue)}
+  .cmd{color:var(--fg)}
+  a{color:var(--blue);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* terminal window */
+  .win{
+    background:var(--inset);
+    border:1px solid var(--border);
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 16px 40px rgba(1,4,9,.7);
   }
-  h1 {
-    font-size: clamp(2rem, 5vw, 3rem);
-    line-height: 1.15;
-    margin: 22px 0 10px;
-    letter-spacing: -.02em;
+  .win-bar{
+    display:flex;align-items:center;gap:8px;
+    padding:10px 14px;
+    background:var(--subtle);
+    border-bottom:1px solid var(--border);
   }
-  h1 span {
-    background: linear-gradient(90deg, var(--accent), var(--accent2));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+  .dot{width:12px;height:12px;border-radius:50%}
+  .dot.r{background:#ff5f57}.dot.y{background:#febc2e}.dot.g{background:#28c840}
+  .win-title{margin-left:8px;color:var(--fg-muted);font-size:.8rem}
+  .win-body{padding:20px;overflow-x:auto}
+  pre{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--mono);font-size:.9rem;line-height:1.75}
+
+  .out{color:var(--fg-muted)}
+  .name{color:var(--fg);font-size:1.5rem;font-weight:700;letter-spacing:-.01em}
+  .role{color:var(--yellow)}
+  .cursor{display:inline-block;width:8px;height:1.05em;background:var(--fg);vertical-align:-2px;animation:blink 1.1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  @media (prefers-reduced-motion:reduce){.cursor{animation:none}}
+
+  .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:8px 14px;border-radius:6px;font-size:.82rem;
+    background:var(--subtle);color:var(--fg);
+    border:1px solid var(--border);
+    transition:border-color .12s ease,background .12s ease;
   }
-  .lead { font-size: 1.12rem; color: var(--muted); max-width: 62ch; margin: 0 0 8px; }
-  .meta { color: var(--muted); font-size: .92rem; margin-top: 14px; }
-  .links { display: flex; flex-wrap: wrap; gap: 10px; margin: 28px 0 8px; }
-  .links a {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    color: var(--text);
-    border: 1px solid var(--border);
-    background: var(--panel);
-    padding: 9px 15px;
-    border-radius: 10px;
-    font-size: .92rem;
-    transition: border-color .15s ease, transform .15s ease;
+  .btn:hover{border-color:var(--fg-dim);background:#21262d;text-decoration:none}
+  .btn.primary{background:#238636;border-color:rgba(240,246,252,.1);color:#fff}
+  .btn.primary:hover{background:#2ea043}
+  .btn code{background:none;border:0;padding:0;color:inherit;font-size:.82rem}
+
+  h2{
+    font-size:.78rem;font-weight:600;
+    text-transform:uppercase;letter-spacing:.12em;
+    color:var(--fg-muted);
+    margin:0 0 14px;
+    display:flex;align-items:center;gap:10px;
   }
-  .links a:hover { border-color: var(--accent); transform: translateY(-1px); }
-  .links a.primary {
-    background: linear-gradient(90deg, rgba(56,189,248,.18), rgba(167,139,250,.18));
-    border-color: rgba(56,189,248,.45);
+  h2::after{content:"";flex:1;height:1px;background:var(--border-muted)}
+  section{margin-top:48px}
+
+  /* git log */
+  .log{border:1px solid var(--border);border-radius:10px;background:var(--subtle);overflow:hidden}
+  .log pre{padding:18px 20px;font-size:.86rem}
+  .graph{color:var(--green)}
+  .hash{color:var(--orange)}
+  .date{color:var(--fg-dim)}
+  .msg{color:var(--fg)}
+
+  /* diff */
+  .diff{border:1px solid var(--border);border-radius:10px;background:var(--inset);overflow:hidden}
+  .diff-head{
+    padding:9px 16px;background:var(--subtle);border-bottom:1px solid var(--border);
+    color:var(--fg-muted);font-size:.8rem;display:flex;gap:16px;flex-wrap:wrap
   }
-  section { margin-top: 56px; }
-  h2 {
-    font-size: .82rem;
-    text-transform: uppercase;
-    letter-spacing: .12em;
-    color: var(--muted);
-    margin: 0 0 18px;
-    font-weight: 600;
+  .diff pre{padding:16px 0;font-size:.86rem}
+  .diff .ln{display:block;padding:0 16px;white-space:pre-wrap}
+  .diff .hunk{color:var(--purple);background:rgba(188,140,255,.07)}
+  .diff .add{color:var(--green);background:rgba(63,185,80,.09)}
+  .diff .del{color:var(--red);background:rgba(248,81,73,.09)}
+  .diff .ctx{color:var(--fg-muted)}
+
+  /* repo cards */
+  .grid{display:grid;gap:12px;grid-template-columns:1fr}
+  @media (min-width:700px){.grid{grid-template-columns:1fr 1fr}}
+  .repo{
+    display:block;padding:16px 18px;
+    background:var(--subtle);
+    border:1px solid var(--border);
+    border-radius:10px;
+    transition:border-color .12s ease,transform .12s ease;
   }
-  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-  .tags span {
-    font-size: .85rem;
-    color: var(--text);
-    background: var(--panel);
-    border: 1px solid var(--border);
-    padding: 6px 12px;
-    border-radius: 8px;
+  .repo:hover{border-color:var(--blue);transform:translateY(-2px);text-decoration:none}
+  .repo-name{color:var(--blue);font-weight:600;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+  .repo-name .tag{font-size:.62rem;color:var(--fg-dim);border:1px solid var(--border);border-radius:999px;padding:1px 7px;font-weight:400;text-transform:uppercase;letter-spacing:.06em}
+  .repo-desc{color:var(--fg-muted);font-size:.82rem;margin:0 0 12px}
+  .repo-meta{display:flex;align-items:center;gap:16px;color:var(--fg-dim);font-size:.75rem}
+  .lang{display:flex;align-items:center;gap:6px}
+  .lang i{width:11px;height:11px;border-radius:50%;display:inline-block}
+
+  /* remotes */
+  .remotes{border:1px solid var(--border);border-radius:10px;background:var(--inset);padding:6px 0;overflow-x:auto}
+  .remotes pre{padding:12px 16px;font-size:.84rem}
+
+  footer{
+    margin-top:56px;padding-top:22px;border-top:1px solid var(--border-muted);
+    color:var(--fg-dim);font-size:.78rem;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center
   }
-  .grid { display: grid; gap: 14px; grid-template-columns: 1fr; }
-  @media (min-width: 640px) { .grid { grid-template-columns: 1fr 1fr; } }
-  .card {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    background: var(--panel);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 18px 20px;
-    transition: border-color .15s ease, transform .15s ease;
-  }
-  .card:hover { border-color: var(--accent); transform: translateY(-2px); }
-  .card h3 { margin: 0 0 6px; font-size: 1rem; }
-  .card p { margin: 0; color: var(--muted); font-size: .88rem; }
-  footer {
-    margin-top: 72px;
-    padding-top: 22px;
-    border-top: 1px solid var(--border);
-    color: var(--muted);
-    font-size: .85rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: space-between;
-  }
+  .status{display:flex;align-items:center;gap:8px}
+  .clean{color:var(--green)}
+  ::selection{background:rgba(88,166,255,.3)}
 </style>
 </head>
 <body>
 <main>
-  <span class="badge">Cloud &amp; DevOps Engineer</span>
-  <h1>Hi, I'm <span>Cristiano Nilsen</span></h1>
-  <p class="lead">
-    Senior Cloud &amp; DevOps Engineer with 20+ years in IT and a strong background in
-    infrastructure and network engineering. I design, build and operate cloud platforms
-    with AWS, Kubernetes and Terraform.
-  </p>
-  <p class="meta">Joinville, Brazil</p>
 
-  <nav class="links">
-    <a class="primary" href="https://github.com/crilsen">GitHub</a>
-    <a href="https://linkedin.com/in/cristianon">LinkedIn</a>
-    <a href="https://cristianon.com">cristianon.com</a>
-    <a href="mailto:cristiano@nilsen.com.br">Email</a>
-  </nav>
+  <div class="win">
+    <div class="win-bar">
+      <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+      <span class="win-title">crilsen@github: ~ — zsh</span>
+    </div>
+    <div class="win-body">
+      <pre><span class="prompt">crilsen@github</span>:<span class="path">~</span>$ <span class="cmd">whoami</span>
+<span class="name">Cristiano Nilsen</span> <span class="role">// Senior Cloud &amp; DevOps Engineer</span>
+
+<span class="prompt">crilsen@github</span>:<span class="path">~</span>$ <span class="cmd">cat about.md</span>
+<span class="out">20+ years in IT with a strong background in infrastructure and
+network engineering. I design, build and operate cloud platforms
+with AWS, Kubernetes and Terraform.</span>
+
+<span class="prompt">crilsen@github</span>:<span class="path">~</span>$ <span class="cmd">cat location.txt</span>
+<span class="out">Joinville, Brazil</span>
+
+<span class="prompt">crilsen@github</span>:<span class="path">~</span>$ <span class="cursor"></span></pre>
+
+      <nav class="actions">
+        <a class="btn primary" href="https://github.com/crilsen">GitHub</a>
+        <a class="btn" href="https://linkedin.com/in/cristianon">LinkedIn</a>
+        <a class="btn" href="https://cristianon.com">cristianon.com</a>
+        <a class="btn" href="mailto:cristiano@nilsen.com.br">cristiano@nilsen.com.br</a>
+      </nav>
+    </div>
+  </div>
 
   <section>
-    <h2>Core areas</h2>
-    <div class="tags">
-      <span>AWS</span>
-      <span>Kubernetes / EKS</span>
-      <span>Terraform</span>
-      <span>DevOps &amp; CI/CD</span>
-      <span>SRE &amp; Observability</span>
-      <span>Platform Engineering</span>
-      <span>Cloud Security</span>
-      <span>Network Architecture</span>
-      <span>Linux</span>
-      <span>AIOps</span>
+    <h2>git log --graph --oneline</h2>
+    <div class="log">
+<pre><span class="graph">*</span> <span class="hash">a1f9c2e</span> <span class="date">(HEAD -&gt; main)</span> <span class="msg">Platform Engineering &amp; SRE</span>
+<span class="graph">*</span> <span class="hash">7d3e810</span> <span class="msg">Cloud Security &amp; SecOps</span>
+<span class="graph">*</span> <span class="hash">c02b4f1</span> <span class="msg">Kubernetes / EKS at scale</span>
+<span class="graph">*</span> <span class="hash">9e5a7d8</span> <span class="msg">Terraform &amp; Infrastructure as Code</span>
+<span class="graph">*</span> <span class="hash">41c88fa</span> <span class="msg">AWS architecture (since 2019)</span>
+<span class="graph">*</span> <span class="hash">b7f1203</span> <span class="msg">DevOps &amp; CI/CD pipelines</span>
+<span class="graph">*</span> <span class="hash">3ac9e64</span> <span class="msg">Network Architecture &amp; Linux</span>
+<span class="graph">|</span>
+<span class="graph">*</span> <span class="hash">0000001</span> <span class="date">(root)</span> <span class="msg">first commit — 20+ years in IT</span></pre>
     </div>
   </section>
 
   <section>
-    <h2>Featured projects</h2>
+    <h2>git diff skills.txt</h2>
+    <div class="diff">
+      <div class="diff-head">
+        <span style="color:var(--red)">--- a/skills.txt</span>
+        <span style="color:var(--green)">+++ b/skills.txt</span>
+      </div>
+<pre><span class="ln hunk">@@ -1,4 +1,14 @@</span><span class="ln ctx"> cloud    = [aws, azure, gcp, oci]</span><span class="ln ctx"> runtime  = [linux, docker]</span><span class="ln del">-skills   = [networking]</span><span class="ln add">+skills   = [</span><span class="ln add">+  kubernetes, eks, terraform, ansible,</span><span class="ln add">+  ci/cd, github-actions, gitlab, jenkins,</span><span class="ln add">+  observability, prometheus, grafana,</span><span class="ln add">+  platform-engineering, sre,</span><span class="ln add">+  cloud-security, secops,</span><span class="ln add">+  network-architecture, aiops, python</span><span class="ln add">+]</span></pre>
+    </div>
+  </section>
+
+  <section>
+    <h2>git remote -v</h2>
+    <div class="remotes">
+<pre><span class="out">origin</span>  <a href="https://github.com/crilsen">https://github.com/crilsen</a>            <span class="date">(fetch)</span>
+<span class="out">linkedin</span> <a href="https://linkedin.com/in/cristianon">https://linkedin.com/in/cristianon</a>    <span class="date">(follow)</span>
+<span class="out">website</span> <a href="https://cristianon.com">https://cristianon.com</a>               <span class="date">(deploy)</span></pre>
+    </div>
+  </section>
+
+  <section>
+    <h2>git log --repos</h2>
     <div class="grid">
-      <a class="card" href="https://github.com/crilsen/multicloud-reference-architectures">
-        <h3>Multi-Cloud Reference Architectures</h3>
-        <p>AWS, Azure, GCP and OCI foundations with Kubernetes, networking, identity, security and IaC.</p>
+      <a class="repo" href="https://github.com/crilsen/multicloud-reference-architectures">
+        <div class="repo-name">multicloud-reference-architectures <span class="tag">public</span></div>
+        <p class="repo-desc">AWS, Azure, GCP and OCI foundations covering Kubernetes, networking, identity, security and IaC.</p>
+        <div class="repo-meta">
+          <span class="lang"><i style="background:#844FBA"></i>Terraform</span>
+          <span class="lang"><i style="background:#3572A5"></i>Python</span>
+        </div>
       </a>
-      <a class="card" href="https://github.com/crilsen/aws-eks-gitops-platform">
-        <h3>EKS GitOps Platform</h3>
-        <p>Production-oriented GitOps platform on Amazon EKS with Terraform, Argo CD and Helm.</p>
+      <a class="repo" href="https://github.com/crilsen/aws-eks-gitops-platform">
+        <div class="repo-name">aws-eks-gitops-platform <span class="tag">public</span></div>
+        <p class="repo-desc">Production-oriented GitOps platform on Amazon EKS with Terraform, Argo CD, Helm and automated promotion.</p>
+        <div class="repo-meta">
+          <span class="lang"><i style="background:#326CE5"></i>Kubernetes</span>
+          <span class="lang"><i style="background:#844FBA"></i>Terraform</span>
+        </div>
       </a>
-      <a class="card" href="https://github.com/crilsen/aws-reference-architecture">
-        <h3>AWS Reference Architecture</h3>
-        <p>Terraform reference architecture for AWS Organizations, governance and networking.</p>
+      <a class="repo" href="https://github.com/crilsen/aws-reference-architecture">
+        <div class="repo-name">aws-reference-architecture <span class="tag">public</span></div>
+        <p class="repo-desc">Terraform reference architecture for AWS Organizations, governance, networking and Amazon EKS.</p>
+        <div class="repo-meta">
+          <span class="lang"><i style="background:#844FBA"></i>Terraform</span>
+        </div>
       </a>
-      <a class="card" href="https://github.com/crilsen/k8s-homelab">
-        <h3>Kubernetes Homelab</h3>
-        <p>Reproducible kubeadm homelab with Ansible + Argo CD GitOps. CKA/CKAD/CKS study lab.</p>
+      <a class="repo" href="https://github.com/crilsen/k8s-homelab">
+        <div class="repo-name">k8s-homelab <span class="tag">public</span></div>
+        <p class="repo-desc">Reproducible kubeadm Kubernetes homelab with Ansible + Argo CD GitOps. CKA/CKAD/CKS study lab.</p>
+        <div class="repo-meta">
+          <span class="lang"><i style="background:#EE0000"></i>Ansible</span>
+          <span class="lang"><i style="background:#326CE5"></i>Kubernetes</span>
+        </div>
       </a>
     </div>
   </section>
 
   <footer>
-    <span>© <span id="y">2026</span> Cristiano Nilsen</span>
-    <span>Built with GitHub Pages</span>
+    <span class="status">
+      <span class="clean">✓</span>
+      <span>working tree clean — <span id="y">2026</span> Cristiano Nilsen</span>
+    </span>
+    <span>deployed on GitHub Pages</span>
   </footer>
 </main>
 <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
