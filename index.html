@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cristiano Nilsen — Cloud &amp; DevOps Engineer</title>
+<meta name="description" content="Senior Cloud & DevOps Engineer. AWS, Kubernetes, Terraform, SRE and Platform Engineering." />
+<meta property="og:title" content="Cristiano Nilsen — Cloud & DevOps Engineer" />
+<meta property="og:description" content="Senior Cloud & DevOps Engineer. AWS, Kubernetes, Terraform, SRE and Platform Engineering." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☁️</text></svg>" />
+<style>
+  :root {
+    --bg: #0b0f17;
+    --panel: #121826;
+    --border: #1f2937;
+    --text: #e5e7eb;
+    --muted: #94a3b8;
+    --accent: #38bdf8;
+    --accent2: #a78bfa;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: ui-sans-serif, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(600px circle at 15% -5%, rgba(56,189,248,.16), transparent 60%),
+      radial-gradient(600px circle at 85% 0%, rgba(167,139,250,.14), transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  main { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 72px 24px 64px; }
+  .badge {
+    display: inline-block;
+    font-size: .78rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid rgba(56,189,248,.35);
+    background: rgba(56,189,248,.08);
+    padding: 5px 12px;
+    border-radius: 999px;
+  }
+  h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.15;
+    margin: 22px 0 10px;
+    letter-spacing: -.02em;
+  }
+  h1 span {
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .lead { font-size: 1.12rem; color: var(--muted); max-width: 62ch; margin: 0 0 8px; }
+  .meta { color: var(--muted); font-size: .92rem; margin-top: 14px; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; margin: 28px 0 8px; }
+  .links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--text);
+    border: 1px solid var(--border);
+    background: var(--panel);
+    padding: 9px 15px;
+    border-radius: 10px;
+    font-size: .92rem;
+    transition: border-color .15s ease, transform .15s ease;
+  }
+  .links a:hover { border-color: var(--accent); transform: translateY(-1px); }
+  .links a.primary {
+    background: linear-gradient(90deg, rgba(56,189,248,.18), rgba(167,139,250,.18));
+    border-color: rgba(56,189,248,.45);
+  }
+  section { margin-top: 56px; }
+  h2 {
+    font-size: .82rem;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 18px;
+    font-weight: 600;
+  }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tags span {
+    font-size: .85rem;
+    color: var(--text);
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 6px 12px;
+    border-radius: 8px;
+  }
+  .grid { display: grid; gap: 14px; grid-template-columns: 1fr; }
+  @media (min-width: 640px) { .grid { grid-template-columns: 1fr 1fr; } }
+  .card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 20px;
+    transition: border-color .15s ease, transform .15s ease;
+  }
+  .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .card h3 { margin: 0 0 6px; font-size: 1rem; }
+  .card p { margin: 0; color: var(--muted); font-size: .88rem; }
+  footer {
+    margin-top: 72px;
+    padding-top: 22px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: .85rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: space-between;
+  }
+</style>
+</head>
+<body>
+<main>
+  <span class="badge">Cloud &amp; DevOps Engineer</span>
+  <h1>Hi, I'm <span>Cristiano Nilsen</span></h1>
+  <p class="lead">
+    Senior Cloud &amp; DevOps Engineer with 20+ years in IT and a strong background in
+    infrastructure and network engineering. I design, build and operate cloud platforms
+    with AWS, Kubernetes and Terraform.
+  </p>
+  <p class="meta">Joinville, Brazil</p>
+
+  <nav class="links">
+    <a class="primary" href="https://github.com/crilsen">GitHub</a>
+    <a href="https://linkedin.com/in/cristianon">LinkedIn</a>
+    <a href="https://cristianon.com">cristianon.com</a>
+    <a href="mailto:cristiano@nilsen.com.br">Email</a>
+  </nav>
+
+  <section>
+    <h2>Core areas</h2>
+    <div class="tags">
+      <span>AWS</span>
+      <span>Kubernetes / EKS</span>
+      <span>Terraform</span>
+      <span>DevOps &amp; CI/CD</span>
+      <span>SRE &amp; Observability</span>
+      <span>Platform Engineering</span>
+      <span>Cloud Security</span>
+      <span>Network Architecture</span>
+      <span>Linux</span>
+      <span>AIOps</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Featured projects</h2>
+    <div class="grid">
+      <a class="card" href="https://github.com/crilsen/multicloud-reference-architectures">
+        <h3>Multi-Cloud Reference Architectures</h3>
+        <p>AWS, Azure, GCP and OCI foundations with Kubernetes, networking, identity, security and IaC.</p>
+      </a>
+      <a class="card" href="https://github.com/crilsen/aws-eks-gitops-platform">
+        <h3>EKS GitOps Platform</h3>
+        <p>Production-oriented GitOps platform on Amazon EKS with Terraform, Argo CD and Helm.</p>
+      </a>
+      <a class="card" href="https://github.com/crilsen/aws-reference-architecture">
+        <h3>AWS Reference Architecture</h3>
+        <p>Terraform reference architecture for AWS Organizations, governance and networking.</p>
+      </a>
+      <a class="card" href="https://github.com/crilsen/k8s-homelab">
+        <h3>Kubernetes Homelab</h3>
+        <p>Reproducible kubeadm homelab with Ansible + Argo CD GitOps. CKA/CKAD/CKS study lab.</p>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <span>© <span id="y">2026</span> Cristiano Nilsen</span>
+    <span>Built with GitHub Pages</span>
+  </footer>
+</main>
+<script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>
