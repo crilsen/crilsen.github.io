@@ -3,400 +3,152 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Cristiano Nilsen (crilsen) · GitHub</title>
+<title>Cristiano Nilsen — Cloud &amp; DevOps Engineer</title>
 <meta name="description" content="Senior Cloud & DevOps Engineer. AWS, Kubernetes, Terraform, SRE and Platform Engineering." />
-<meta property="og:title" content="Cristiano Nilsen (crilsen)" />
+<meta property="og:title" content="Cristiano Nilsen — Cloud &amp; DevOps Engineer" />
 <meta property="og:description" content="Senior Cloud & DevOps Engineer. AWS, Kubernetes, Terraform, SRE and Platform Engineering." />
 <meta property="og:type" content="profile" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='%231f2328' d='M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z'/></svg>" />
+<meta name="theme-color" content="#0b0b0b" media="(prefers-color-scheme:dark)" />
+<meta name="theme-color" content="#fbfbfb" media="(prefers-color-scheme:light)" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'><text y='.9' font-size='1'>~</text></svg>" />
 <style>
   :root{
     color-scheme:light;
-    --canvas:#ffffff;
-    --muted:#f6f8fa;
-    --inset:#f6f8fa;
-    --border:#d0d7de;
-    --border-muted:#d8dee4;
-    --fg:#1f2328;
-    --fg-muted:#656d76;
-    --accent:#0969da;
-    --btn-border:rgba(31,35,40,.15);
-    --btn-shadow:0 1px 0 rgba(31,35,40,.04);
-    --g0:#ebedf0; --g1:#9be9a8; --g2:#40c463; --g3:#30a14e; --g4:#216e39;
+    --bg:#fbfbfb;
+    --fg:#111111;
+    --muted:#6b6b6b;
+    --line:#e4e4e4;
+    --accent:#15803d;
   }
   @media (prefers-color-scheme:dark){
     :root{
       color-scheme:dark;
-      --canvas:#0d1117;
-      --muted:#161b22;
-      --inset:#010409;
-      --border:#30363d;
-      --border-muted:#21262d;
-      --fg:#e6edf3;
-      --fg-muted:#8b949e;
-      --accent:#2f81f7;
-      --btn-border:rgba(240,246,252,.1);
-      --btn-shadow:0 1px 0 rgba(1,4,9,.4);
-      --g0:#161b22; --g1:#0e4429; --g2:#006d32; --g3:#26a641; --g4:#39d353;
+      --bg:#0b0b0b;
+      --fg:#ededed;
+      --muted:#8f8f8f;
+      --line:#242424;
+      --accent:#4ade80;
     }
   }
   *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
   body{
     margin:0;
-    background:var(--canvas);
+    background:var(--bg);
     color:var(--fg);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif;
-    font-size:14px;
-    line-height:1.5;
+    font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Monaco,"Cascadia Code","JetBrains Mono",Consolas,"Liberation Mono",monospace;
+    font-size:15px;
+    line-height:1.7;
     -webkit-font-smoothing:antialiased;
   }
-  a{color:var(--accent);text-decoration:none}
-  a:hover{text-decoration:underline}
-  code,pre{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace}
+  main{max-width:660px;margin:0 auto;padding:72px 24px 64px}
+  @media (max-width:600px){main{padding:48px 20px 48px}}
 
-  /* top nav */
-  header.app{
-    background:var(--muted);
-    border-bottom:1px solid var(--border);
-    padding:12px 0;
-  }
-  .app-inner{max-width:1216px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:16px}
-  .logo{display:flex;color:var(--fg)}
-  .logo svg{width:32px;height:32px}
-  .search{
-    flex:1;max-width:280px;
-    background:var(--canvas);
-    border:1px solid var(--border);
-    border-radius:6px;
-    color:var(--fg-muted);
-    padding:5px 12px;
-    font-size:14px;
-  }
-  .app-nav{display:none;gap:16px;margin-left:auto;align-items:center;color:var(--fg-muted)}
-  @media (min-width:768px){.app-nav{display:flex}}
-  .app-nav svg{width:16px;height:16px}
-  .nav-avatar{border-radius:50%;border:1px solid var(--border)}
+  a{color:inherit;text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .15s ease,color .15s ease}
+  a:hover{color:var(--accent);border-color:var(--accent)}
+  a.plain{border-bottom:0}
 
-  /* layout */
-  .layout{max-width:1216px;margin:0 auto;padding:24px;display:grid;gap:24px;grid-template-columns:1fr}
-  @media (min-width:768px){.layout{grid-template-columns:296px minmax(0,1fr)}}
-  .layout > *{min-width:0}
+  header{margin-bottom:44px}
+  .tilde{color:var(--accent)}
+  h1{font-size:26px;font-weight:600;letter-spacing:-.01em;margin:0 0 6px}
+  .role{color:var(--fg);margin:0}
+  .meta{color:var(--muted);margin:2px 0 0;font-size:14px}
 
-  /* sidebar */
-  .avatar{
-    width:100%;max-width:260px;height:auto;aspect-ratio:1;
-    border-radius:50%;
-    border:1px solid var(--border);
-    display:block;
-    margin-bottom:16px;
-  }
-  .side h1{font-size:24px;font-weight:600;line-height:1.25;margin:0}
-  .side h1 span{display:block;font-size:20px;font-weight:300;color:var(--fg-muted)}
-  .bio{margin:16px 0;color:var(--fg)}
-  .follow{display:flex;gap:8px;margin:16px 0}
-  .btn{
-    flex:1;text-align:center;
-    padding:5px 16px;
-    font-size:14px;font-weight:600;
-    border:1px solid var(--btn-border);
-    border-radius:6px;
-    background:var(--muted);
-    color:var(--fg);
-    box-shadow:var(--btn-shadow);
-    cursor:pointer;
-  }
-  .btn:hover{background:var(--border-muted);text-decoration:none}
-  .btn.primary{background:#1f883d;border-color:rgba(31,35,40,.15);color:#fff;box-shadow:none}
-  .btn.primary:hover{background:#1a7f37}
-  .side ul{list-style:none;margin:0;padding:0;color:var(--fg-muted)}
-  .side li{display:flex;align-items:center;gap:8px;padding:2px 0;font-size:14px}
-  .side li svg{width:16px;height:16px;flex:none;fill:currentColor}
+  nav{margin:26px 0 0;display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px}
 
-  /* main blocks */
-  .block{border-bottom:1px solid var(--border);padding-bottom:24px;margin-bottom:24px}
-  .block:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
-  .block h2{font-size:16px;font-weight:400;margin:0 0 12px}
-  .block h2 a{font-weight:600}
+  section{margin-top:44px}
+  h2{
+    font-size:13px;font-weight:400;
+    color:var(--muted);
+    margin:0 0 14px;
+    letter-spacing:.02em;
+  }
+  h2::before{content:"~/";color:var(--accent)}
+  p{margin:0 0 14px}
+  p:last-child{margin-bottom:0}
 
-  .repo{
-    border:1px solid var(--border);
-    border-radius:6px;
-    padding:16px;
-    background:var(--canvas);
+  ul{list-style:none;margin:0;padding:0}
+  ul.stack{display:flex;flex-wrap:wrap;gap:6px}
+  ul.stack li{
+    font-size:13px;
+    color:var(--muted);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:1px 8px;
   }
-  .repos{display:grid;gap:16px;grid-template-columns:1fr}
-  @media (min-width:1012px){.repos{grid-template-columns:1fr 1fr}}
-  .repo-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px}
-  .repo-top > *{min-width:0}
-  .repo-name{color:var(--accent);font-weight:600;font-size:14px;overflow-wrap:anywhere}
-  .repo-name:hover{text-decoration:underline}
-  .pill{
-    font-size:12px;font-weight:500;color:var(--fg-muted);
-    border:1px solid var(--border);
-    border-radius:999px;padding:0 7px;line-height:18px;white-space:nowrap;
-  }
-  .repo-desc{color:var(--fg-muted);font-size:12px;margin:0 0 16px;min-height:32px}
-  .repo-meta{display:flex;align-items:center;gap:16px;font-size:12px;color:var(--fg-muted)}
-  .lang{display:flex;align-items:center;gap:6px}
-  .lang i{width:12px;height:12px;border-radius:50%;display:inline-block;border:1px solid rgba(27,31,36,.15)}
+  ul.projects li{margin-bottom:14px}
+  ul.projects li:last-child{margin-bottom:0}
+  ul.projects b{font-weight:600}
+  ul.projects span{display:block;color:var(--muted);font-size:14px}
 
-  /* contributions */
-  .graph-wrap{overflow-x:auto;padding-bottom:4px}
-  .graph-months{display:grid;grid-template-columns:repeat(53,10px);gap:3px;margin-bottom:4px}
-  .graph-months span{font-size:11px;color:var(--fg-muted);white-space:nowrap}
-  .graph-grid{display:grid;grid-template-rows:repeat(7,10px);grid-auto-flow:column;grid-auto-columns:10px;gap:3px}
-  .graph-grid i{width:10px;height:10px;border-radius:2px;background:var(--g0)}
-  .graph-grid i[data-l="1"]{background:var(--g1)}
-  .graph-grid i[data-l="2"]{background:var(--g2)}
-  .graph-grid i[data-l="3"]{background:var(--g3)}
-  .graph-grid i[data-l="4"]{background:var(--g4)}
-  .graph-side{display:grid;grid-template-rows:repeat(7,10px);gap:3px;margin-right:6px;font-size:9px;color:var(--fg-muted);align-items:center;align-self:flex-end}
-  .graph-side span{height:10px;line-height:10px}
-  .graph-flex{display:flex;align-items:flex-start}
-  .graph-legend{display:flex;align-items:center;gap:4px;justify-content:flex-end;margin-top:8px;font-size:12px;color:var(--fg-muted)}
-  .graph-legend i{width:10px;height:10px;border-radius:2px}
-
-  /* readme */
-  .readme{border:1px solid var(--border);border-radius:6px}
-  .readme-head{
-    display:flex;align-items:center;gap:8px;
-    padding:8px 16px;
-    border-bottom:1px solid var(--border);
-    background:var(--muted);
-    border-radius:6px 6px 0 0;
-    font-size:12px;color:var(--fg-muted);
-  }
-  .md{padding:24px 32px;font-size:16px;line-height:1.6}
-  .md h3{font-size:18px;font-weight:600;margin:24px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--border-muted)}
-  .md h3:first-child{margin-top:0}
-  .md p{margin:0 0 16px}
-  .md ul{margin:0 0 16px;padding-left:28px}
-  .md li{margin:4px 0}
-  .md code{background:var(--muted);border-radius:6px;padding:.2em .4em;font-size:85%}
-  .md .lead{font-size:16px;color:var(--fg)}
-  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;padding:0;list-style:none}
-  .chips li{
-    font-size:12px;font-weight:500;
-    border:1px solid var(--border);
-    border-radius:999px;
-    padding:2px 10px;
-    color:var(--fg-muted);
-    background:var(--muted);
-    margin:0;
-  }
+  hr{border:0;border-top:1px solid var(--line);margin:44px 0 0}
   footer{
-    max-width:1216px;margin:0 auto;padding:24px;
-    border-top:1px solid var(--border);
-    color:var(--fg-muted);font-size:12px;
-    display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;
-  }
-  @media (max-width:767px){
-    .app-inner{padding:0 16px}
-    .layout{padding:16px}
-    .avatar{max-width:180px}
-    .md{padding:16px 20px;font-size:15px}
-    .graph-legend{justify-content:flex-start}
-    footer{padding:20px 16px}
+    margin-top:44px;
+    color:var(--muted);
+    font-size:13px;
+    display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:space-between;
   }
 </style>
 </head>
 <body>
+<main>
 
-<header class="app">
-  <div class="app-inner">
-    <a class="logo" href="https://github.com/crilsen" aria-label="GitHub">
-      <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
-    </a>
-    <input class="search" type="text" placeholder="Type / to search" readonly aria-label="Search" />
-    <nav class="app-nav" aria-hidden="true">
-      <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm7.25-3.25v2.5h2.5v1.5h-2.5v2.5h-1.5v-2.5h-2.5v-1.5h2.5v-2.5h1.5Z"/></svg>
-      <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 16a2 2 0 0 0 1.985-1.75c.017-.137-.097-.25-.235-.25h-3.5c-.138 0-.252.113-.235.25A2 2 0 0 0 8 16ZM3 5a5 5 0 0 1 10 0v2.947c0 .05.015.098.042.139l1.703 2.555A1.519 1.519 0 0 1 13.482 13H2.518a1.516 1.516 0 0 1-1.263-2.36l1.703-2.554A.255.255 0 0 0 3 7.947Zm5-3.5A3.5 3.5 0 0 0 4.5 5v2.947c0 .346-.102.683-.294.97l-1.703 2.556a.017.017 0 0 0-.003.01l.001.006c0 .002.002.004.004.006l.006.004.007.001h10.964l.007-.001.006-.004.004-.006.001-.007a.017.017 0 0 0-.003-.01l-1.703-2.554a1.745 1.745 0 0 1-.294-.97V5A3.5 3.5 0 0 0 8 1.5Z"/></svg>
-      <img class="nav-avatar" src="https://github.com/crilsen.png" alt="" width="20" height="20" />
+  <header>
+    <h1>Cristiano Nilsen</h1>
+    <p class="role">Senior Cloud &amp; DevOps Engineer</p>
+    <p class="meta">Joinville, Brazil</p>
+    <nav>
+      <a href="https://github.com/crilsen">github</a>
+      <a href="https://linkedin.com/in/cristianon">linkedin</a>
+      <a href="https://cristianon.com">website</a>
+      <a href="mailto:cristiano@nilsen.com.br">email</a>
     </nav>
-  </div>
-</header>
+  </header>
 
-<div class="layout">
-  <aside class="side">
-    <img class="avatar" src="https://github.com/crilsen.png" alt="Cristiano Nilsen" width="260" height="260" />
-    <h1>Cristiano Nilsen <span>crilsen</span></h1>
-    <p class="bio">Senior Cloud &amp; DevOps Engineer with 20+ years in IT and a strong background in infrastructure and network engineering. AWS · Kubernetes · Terraform · SRE · Platform Engineering · Cloud Security · Multi-Cloud.</p>
-    <div class="follow">
-      <a class="btn primary" href="https://github.com/crilsen">Follow</a>
-      <a class="btn" href="mailto:cristiano@nilsen.com.br">Email</a>
-    </div>
-    <ul>
+  <section>
+    <h2>about</h2>
+    <p>
+      20+ years in IT, with a background in infrastructure and network engineering.
+      I design, build and operate cloud platforms on AWS since 2019, mostly with
+      Kubernetes and Terraform, and keep hands-on labs across Azure, GCP and OCI.
+    </p>
+  </section>
+
+  <section>
+    <h2>stack</h2>
+    <ul class="stack">
+      <li>aws</li><li>azure</li><li>gcp</li><li>oci</li>
+      <li>kubernetes</li><li>terraform</li><li>ansible</li>
+      <li>argocd</li><li>docker</li><li>linux</li>
+      <li>github actions</li><li>prometheus</li><li>grafana</li><li>python</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>projects</h2>
+    <ul class="projects">
       <li>
-        <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg>
-        <a href="https://cristianon.com">cristianon.com</a>
+        <b><a href="https://github.com/crilsen/multicloud-reference-architectures">multicloud-reference-architectures</a></b>
+        <span>Kubernetes, networking, identity and IaC across AWS, Azure, GCP and OCI.</span>
       </li>
       <li>
-        <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg>
-        <a href="https://linkedin.com/in/cristianon">linkedin.com/in/cristianon</a>
+        <b><a href="https://github.com/crilsen/aws-eks-gitops-platform">aws-eks-gitops-platform</a></b>
+        <span>GitOps platform on Amazon EKS with Terraform, Argo CD and Helm.</span>
       </li>
       <li>
-        <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
-        <a href="https://github.com/crilsen">github.com/crilsen</a>
-      </li>
-      <li>
-        <svg viewBox="0 0 16 16" fill="currentColor"><path d="m12.596 11.596-3.535 3.536a1.5 1.5 0 0 1-2.122 0l-3.535-3.536a6.5 6.5 0 1 1 9.192-9.193 6.5 6.5 0 0 1 0 9.193Zm-1.06-8.132v-.001a5 5 0 1 0-7.072 7.072L8 14.07l3.536-3.534a5 5 0 0 0 0-7.072ZM8 9a2 2 0 1 1-.001-3.999A2 2 0 0 1 8 9Z"/></svg>
-        Joinville, Brazil
+        <b><a href="https://github.com/crilsen/k8s-homelab">k8s-homelab</a></b>
+        <span>Reproducible kubeadm cluster with Ansible and Argo CD. CKA / CKAD / CKS lab.</span>
       </li>
     </ul>
-  </aside>
+  </section>
 
-  <main>
-    <div class="block">
-      <h2>Popular repositories</h2>
-      <div class="repos">
-        <article class="repo">
-          <div class="repo-top">
-            <a class="repo-name" href="https://github.com/crilsen/multicloud-reference-architectures">multicloud-reference-architectures</a>
-            <span class="pill">Public</span>
-          </div>
-          <p class="repo-desc">Reference architectures and hands-on labs across AWS, Azure, GCP and OCI: Kubernetes, networking, identity, security and IaC.</p>
-          <div class="repo-meta">
-            <span class="lang"><i style="background:#844fba"></i>Terraform</span>
-            <span class="lang"><i style="background:#3572A5"></i>Python</span>
-          </div>
-        </article>
-        <article class="repo">
-          <div class="repo-top">
-            <a class="repo-name" href="https://github.com/crilsen/aws-eks-gitops-platform">aws-eks-gitops-platform</a>
-            <span class="pill">Public</span>
-          </div>
-          <p class="repo-desc">Production-oriented GitOps platform on Amazon EKS using Terraform, Argo CD, Helm, GitHub Actions, ECR and external secrets.</p>
-          <div class="repo-meta">
-            <span class="lang"><i style="background:#326CE5"></i>Kubernetes</span>
-            <span class="lang"><i style="background:#844fba"></i>Terraform</span>
-            <span class="lang"><i style="background:#89e051"></i>Shell</span>
-          </div>
-        </article>
-        <article class="repo">
-          <div class="repo-top">
-            <a class="repo-name" href="https://github.com/crilsen/aws-reference-architecture">aws-reference-architecture</a>
-            <span class="pill">Public</span>
-          </div>
-          <p class="repo-desc">Terraform reference architecture for AWS Organizations, governance, networking and Amazon EKS.</p>
-          <div class="repo-meta">
-            <span class="lang"><i style="background:#844fba"></i>Terraform</span>
-            <span class="lang"><i style="background:#89e051"></i>Shell</span>
-          </div>
-        </article>
-        <article class="repo">
-          <div class="repo-top">
-            <a class="repo-name" href="https://github.com/crilsen/k8s-homelab">k8s-homelab</a>
-            <span class="pill">Public</span>
-          </div>
-          <p class="repo-desc">Reproducible kubeadm Kubernetes homelab (1..N nodes) with Ansible and Argo CD GitOps. CKA / CKAD / CKS study lab.</p>
-          <div class="repo-meta">
-            <span class="lang"><i style="background:#EE0000"></i>Ansible</span>
-            <span class="lang"><i style="background:#326CE5"></i>Kubernetes</span>
-          </div>
-        </article>
-      </div>
-    </div>
+  <hr />
+  <footer>
+    <span>© <span id="y">2026</span> Cristiano Nilsen</span>
+    <span>github pages</span>
+  </footer>
 
-    <div class="block">
-      <h2 id="contrib">Contributions in the last year</h2>
-      <div class="graph-wrap">
-        <div class="graph-flex">
-          <div class="graph-side"><span></span><span>Mon</span><span></span><span>Wed</span><span></span><span>Fri</span><span></span></div>
-          <div>
-            <div class="graph-months" id="months"></div>
-            <div class="graph-grid" id="graph" role="img" aria-label="Contribution graph"></div>
-          </div>
-        </div>
-      </div>
-      <div class="graph-legend">
-        <span>Less</span>
-        <i style="background:var(--g0)"></i><i style="background:var(--g1)"></i><i style="background:var(--g2)"></i><i style="background:var(--g3)"></i><i style="background:var(--g4)"></i>
-        <span>More</span>
-      </div>
-    </div>
-
-    <div class="block">
-      <h2><a href="https://github.com/crilsen">crilsen</a> / README.md</h2>
-      <div class="readme">
-        <div class="readme-head">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914Z"/></svg>
-          README.md
-        </div>
-        <div class="md">
-          <h3>Hi, I'm Cristiano</h3>
-          <p class="lead">Senior Cloud &amp; DevOps Engineer with 20+ years of experience in IT, with a strong background in infrastructure and network engineering.</p>
-
-          <h3>Cloud Engineering</h3>
-          <p>AWS is my primary cloud platform, with professional experience designing, building and operating cloud environments since 2019. I'm expanding these architectural concepts across Azure, GCP and OCI through hands-on labs and multi-cloud reference architectures.</p>
-
-          <h3>Stacks</h3>
-          <ul class="chips">
-            <li>AWS</li><li>Azure</li><li>GCP</li><li>OCI</li>
-            <li>Kubernetes</li><li>EKS</li><li>AKE</li><li>GKE</li><li>OKE</li>
-            <li>Terraform</li><li>Ansible</li><li>Docker</li><li>Linux</li>
-            <li>GitHub Actions</li><li>GitLab CI</li><li>Jenkins</li><li>Argo CD</li>
-            <li>Prometheus</li><li>Grafana</li><li>Python</li>
-          </ul>
-
-          <h3>Core Areas</h3>
-          <ul>
-            <li>Cloud Architecture &amp; Multi-Cloud (AWS, Azure, GCP, OCI)</li>
-            <li>Kubernetes / EKS and Platform Engineering</li>
-            <li>Terraform &amp; Infrastructure as Code</li>
-            <li>DevOps, CI/CD and SRE</li>
-            <li>Observability &amp; AIOps</li>
-            <li>Cloud Security / SecOps and Network Architecture</li>
-          </ul>
-
-          <h3>Featured Projects</h3>
-          <ul>
-            <li><strong>Multi-Cloud Reference Architectures</strong> — Kubernetes, networking, identity, security and IaC across four clouds.</li>
-            <li><strong>AWS EKS GitOps Platform</strong> — production-oriented platform with Terraform, Argo CD and Helm.</li>
-            <li><strong>Kubernetes Homelab</strong> — reproducible kubeadm cluster with Ansible + Argo CD, CKA/CKAD/CKS lab.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </main>
-</div>
-
-<footer>
-  <span>© <span id="y">2026</span> Cristiano Nilsen · GitHub Pages</span>
-  <span>This is a personal site, not affiliated with GitHub, Inc.</span>
-</footer>
-
-<script>
-(function () {
-  var weeks = 53, seed = 20260918;
-  function rand() { seed = (seed * 1103515245 + 12345) & 0x7fffffff; return seed / 0x7fffffff; }
-  var grid = document.getElementById('graph');
-  var months = document.getElementById('months');
-  var monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  var today = new Date();
-  var total = 0, html = '', mhtml = '', lastMonth = -1;
-  for (var w = 0; w < weeks; w++) {
-    for (var d = 0; d < 7; d++) {
-      var r = rand(), level = 0;
-      if (r > 0.82) level = 4;
-      else if (r > 0.62) level = 3;
-      else if (r > 0.42) level = 2;
-      else if (r > 0.20) level = 1;
-      var count = level === 0 ? 0 : level * 2 + Math.floor(rand() * 3);
-      total += count;
-      html += '<i data-l="' + level + '" title="' + count + ' contributions"></i>';
-    }
-    var dt = new Date(today.getTime() - (weeks - 1 - w) * 7 * 86400000);
-    if (dt.getMonth() !== lastMonth && w < weeks - 3) {
-      lastMonth = dt.getMonth();
-      mhtml += '<span style="grid-column:' + (w + 1) + '">' + monthNames[lastMonth] + '</span>';
-    }
-  }
-  grid.innerHTML = html;
-  months.innerHTML = mhtml;
-  document.getElementById('contrib').textContent =
-    total.toLocaleString('en-US') + ' contributions in the last year';
-})();
-document.getElementById('y').textContent = new Date().getFullYear();
-</script>
+</main>
+<script>document.getElementById("y").textContent = new Date().getFullYear();</script>
 </body>
 </html>
